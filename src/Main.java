@@ -6,16 +6,21 @@ public class Main {
 
         Scanner scanner = new Scanner (System.in);
         Directory directory = new Directory();
+        //Create file object
+        File dir = null;
 
-        System.out.println("Enter the directory path: ");
-        String path = scanner.nextLine();
 
-//        Create file object
-        File dir = new File(path);
+        while (true) {
+            System.out.println("Enter the directory path: ");
+            String path = scanner.nextLine();
 
-        if (!directory.isValidDirectory(path)) {
-            System.out.println("Invalid directory");
-            return;
+            dir = new File(path);
+
+            if (!directory.isValidDirectory(path)) {
+                System.out.println("Invalid directory");
+            } else{
+                break;
+            }
         }
 
 
